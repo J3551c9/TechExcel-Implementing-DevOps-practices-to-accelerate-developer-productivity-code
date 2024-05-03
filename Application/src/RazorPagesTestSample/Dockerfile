@@ -1,9 +1,9 @@
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
 WORKDIR /app
 
 # Copy csproj and restore as distinct layers
 COPY *.csproj ./
-#RUN dotnet restore
+RUN dotnet restore
 
 # Copy everything else and build
 COPY . ./
